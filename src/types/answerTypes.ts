@@ -1,3 +1,3 @@
-import {Answer} from "@prisma/client";
+import {Answers} from "@prisma/client";
 
-export type TCreateAnswer = Answer;
+export type TCreateAnswer = Omit <Answers,"id"|"questionId">;

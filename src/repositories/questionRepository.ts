@@ -1,24 +1,25 @@
-import { CreateQuestion } from "../types/questionTypes";
+
 import { prisma } from "./../config/database";
+import { TCreateQuestion } from "../types/questionTypes";
 
 
-async function insert(createQuestion: CreateQuestion) {
-  await prisma.question.create({
+async function insert(createQuestion: TCreateQuestion) {
+  await prisma.questions.create({
     data: createQuestion
   });
 }
 
 async function findById(id: number) {
-  return prisma.question.findUnique({
+  return prisma.questions.findUnique({
     where: { id },
     include: {
-      answers: true
+      answer: true
     }
   });
 }
 
 async function findAll() {
-  return prisma.question.findMany()
+  return prisma.questions.findMany()
 }
 
 export default {

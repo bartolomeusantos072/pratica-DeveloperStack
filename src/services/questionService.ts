@@ -1,10 +1,10 @@
 
 import questionRepository from "../repositories/questionRepository";
-import { CreateQuestion } from "../types/questionTypes";
+import { TCreateQuestion } from "../types/questionTypes";
 
 
 
-async function insert(createQuestion: CreateQuestion) {
+async function insert(createQuestion: TCreateQuestion) {
   await questionRepository.insert(createQuestion);
 }
 

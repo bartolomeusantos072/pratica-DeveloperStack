@@ -3,8 +3,8 @@ import { TCreateAnswer } from "../types/answerTypes";
 
 
 
-async function insert(createAnswer:TCreateAnswer) {
-    await answerRepository.insert(createAnswer);
+async function insert(id: number,createAnswer:TCreateAnswer) {
+   return await answerRepository.insert(id,createAnswer);
 }
 
 export default{
